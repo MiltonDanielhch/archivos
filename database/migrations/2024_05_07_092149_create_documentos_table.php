@@ -15,22 +15,22 @@ return new class extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
-            $table->integer('NrDocumento');
-            $table->string('A');
-            $table->string('VIA');
-            $table->string('DE');
-            $table->string('Ref');
-            $table->Date('Fecha');
-            $table->text('Antecedentes');
-            $table->text('BaseLegal');
-            $table->text('ConclusiondesyConsideraciones');
-            $table->text('Vistos');
-            $table->text('Consideraciones');
-            $table->text('PorTanto');
-            $table->text('Decreta');
-            $table->text('Resuelve');
-            $table->text('ConsideracionesLegales');
-            $table->text('Articulo');
+            $table->integer('NrDocumento')->nullable();
+            $table->string('A')->nullable();
+            $table->string('VIA')->nullable();
+            $table->string('DE')->nullable();
+            $table->string('Ref')->nullable();
+            $table->Date('Fecha')->nullable();
+            $table->text('Antecedentes')->nullable();
+            $table->text('BaseLegal')->nullable();
+            $table->text('ConclusiondesyConsideraciones')->nullable();
+            $table->text('Vistos')->nullable();
+            $table->text('Consideraciones')->nullable();
+            $table->text('PorTanto')->nullable();
+            $table->text('Decreta')->nullable();
+            $table->text('Resuelve')->nullable();
+            $table->text('ConsideracionesLegales')->nullable();
+            $table->text('Articulo')->nullable();
             $table->integer('Idtipo');
             $table->timestamps();
         });

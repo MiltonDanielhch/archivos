@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\documentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('maintenance', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'desarrollo.creativo'], function () {
     Voyager::routes();
+    Route::get('Imprimir/{id}', [documentController::class,"printdoc"])->name('document.print');
 });
 
 // Clear cache

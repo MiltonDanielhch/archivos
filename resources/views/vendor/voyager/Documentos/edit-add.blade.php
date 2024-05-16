@@ -226,15 +226,15 @@ function mostrarOcultarCampos() {
 
     // Mostrar campos específicos según el valor de "idtipo"
     if (idtipoValue === '1') {
-        $('#NrDocumento, #Vistos, #Consideraciones, #PorTanto, #Resuelve').show();
-    } else if (idtipoValue === '6') {
-        $('#NrDocumento, #A, #VIA, #DE, #Ref, #Fecha, #Antecedentes, #BaseLegal, #ConclusiondesyConsideraciones').show();
+        $('#NrDocumento, #Vistos, #Consideraciones, #PorTanto, #Decreta').show();
     } else if (idtipoValue === '5') {
-        $('#NrDocumento, #Vistos, #Consideraciones, #PorTanto, #Resuelve').show();
+        $('#NrDocumento, #A, #VIA, #DE, #Ref, #Fecha, #Antecedentes, #BaseLegal, #ConclusiondesyConsideraciones').show();
     } else if (idtipoValue === '4') {
         $('#NrDocumento, #Vistos, #Consideraciones, #PorTanto, #Resuelve').show();
+    } else if (idtipoValue === '3') {
+        $('#NrDocumento, #Vistos, #Consideraciones, #PorTanto, #Resuelve').show();
     } else if (idtipoValue === '2') {
-        $('#NrDocumento, #Vistos, #Consideraciones, #ConsideracionesLegales, #PorTanto, #Decreta').show();
+        $('#NrDocumento, #Vistos, #Consideraciones, #PorTanto, #Resuelve').show();
     }
 
     mostrarCamposSeleccionados();

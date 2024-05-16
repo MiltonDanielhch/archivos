@@ -24,7 +24,6 @@ class Documento extends Model
         'PorTanto',
         'Decreta',
         'Resuelve',
-        'ConsideracionesLegales',
         'Articulo',
         'Idtipo',
         // Otros campos aquí

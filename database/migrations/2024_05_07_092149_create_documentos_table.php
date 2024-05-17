@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('NrDocumento')->nullable();
             $table->text('Cuerpo')->nullable();
-            $table->integer('Idtipo');
+            $table->string('Idtipo');
             $table->timestamps();
         });
     }

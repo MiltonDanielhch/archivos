@@ -211,7 +211,7 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-<script>
+{{--<script>
 var contenedor = document.getElementById('documento_belongsto_tipo_relationship');
 $('#documento_belongsto_tipo_relationship').find('select').on('change', function (e) {
     
@@ -252,5 +252,5 @@ $(document).ready(function() {
     var contenedor = $('#documento_belongsto_tipo_relationship');
     contenedor.find('select').on('change', mostrarOcultarCampos);
 });
-</script>
+</script>--}}
 @stop

@@ -93,7 +93,7 @@ class DataTypesTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 19,
+                'id' => 25,
                 'name' => 'documentos',
                 'slug' => 'documentos',
                 'display_name_singular' => 'Documento',
@@ -106,12 +106,12 @@ class DataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2024-05-08 11:16:22',
-                'updated_at' => '2024-05-14 01:08:10',
+                'created_at' => '2024-05-17 08:57:32',
+                'updated_at' => '2024-05-20 11:57:18',
             ),
             5 => 
             array (
-                'id' => 20,
+                'id' => 26,
                 'name' => 'tipos',
                 'slug' => 'tipos',
                 'display_name_singular' => 'Tipo',
@@ -123,9 +123,9 @@ class DataTypesTableSeeder extends Seeder
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2024-05-08 11:16:36',
-                'updated_at' => '2024-05-10 09:09:01',
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2024-05-17 08:58:14',
+                'updated_at' => '2024-05-17 08:58:14',
             ),
         ));
         

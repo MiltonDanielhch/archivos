@@ -22,37 +22,44 @@ class TiposTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'nomdoc' => 'Decreto Departamental',
-                'created_at' => '2024-05-08 11:16:59',
-                'updated_at' => '2024-05-08 11:16:59',
+                'nomdoc' => 'RESOLUCIÓN ADMINISTRATIVA DE GOBERNACIÓN',
+                'created_at' => '2024-05-17 08:58:27',
+                'updated_at' => '2024-05-17 08:58:27',
             ),
             1 => 
             array (
                 'id' => 2,
-                'nomdoc' => 'Decreto de Gobernacion',
-                'created_at' => '2024-05-08 11:20:50',
-                'updated_at' => '2024-05-08 11:20:50',
+                'nomdoc' => 'DECRETO DEPARTAMENTAL',
+                'created_at' => '2024-05-17 08:58:36',
+                'updated_at' => '2024-05-17 08:58:36',
             ),
             2 => 
             array (
-                'id' => 4,
-                'nomdoc' => 'Resolución Administrativa de Gobernación',
-                'created_at' => '2024-05-08 11:23:27',
-                'updated_at' => '2024-05-08 11:23:27',
+                'id' => 3,
+                'nomdoc' => 'DECRETO DE GOBERNACIÓN',
+                'created_at' => '2024-05-17 08:58:46',
+                'updated_at' => '2024-05-17 08:58:46',
             ),
             3 => 
             array (
-                'id' => 5,
-                'nomdoc' => 'Resolución de Gobernación',
-                'created_at' => '2024-05-08 11:24:55',
-                'updated_at' => '2024-05-08 11:24:55',
+                'id' => 4,
+                'nomdoc' => 'RESOLUCIÓN DE GOBERNACIÓN',
+                'created_at' => '2024-05-17 08:58:53',
+                'updated_at' => '2024-05-17 08:58:53',
             ),
             4 => 
             array (
+                'id' => 5,
+                'nomdoc' => 'INFORME LEGAL',
+                'created_at' => '2024-05-17 08:58:59',
+                'updated_at' => '2024-05-17 08:58:59',
+            ),
+            5 => 
+            array (
                 'id' => 6,
-                'nomdoc' => 'Informe Legal',
-                'created_at' => '2024-05-08 11:25:39',
-                'updated_at' => '2024-05-08 11:25:39',
+                'nomdoc' => 'documento prueba',
+                'created_at' => '2024-05-17 10:51:20',
+                'updated_at' => '2024-05-17 10:51:20',
             ),
         ));
         

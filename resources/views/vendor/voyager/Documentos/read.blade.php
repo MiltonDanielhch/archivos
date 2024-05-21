@@ -27,8 +27,8 @@
             <i class="glyphicon glyphicon-list"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.return_to_list') }}</span>
         </a>
         @endcan
-        <a href="{{ route('document.print',$dataTypeContent->getKey()) }}" class="btn btn-warning">
-            <i class="glyphicon glyphicon-list"></i> <span class="hidden-xs hidden-sm"> Imprimir</span>
+        <a href="{{ route('document.print',$dataTypeContent->getKey()) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-print"></i> <span class="hidden-xs hidden-sm"> Imprimir</span>
         </a>
     </h1>
     @include('voyager::multilingual.language-selector')

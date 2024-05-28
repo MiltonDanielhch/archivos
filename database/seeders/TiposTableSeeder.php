@@ -54,13 +54,6 @@ class TiposTableSeeder extends Seeder
                 'created_at' => '2024-05-17 08:58:59',
                 'updated_at' => '2024-05-17 08:58:59',
             ),
-            5 => 
-            array (
-                'id' => 6,
-                'nomdoc' => 'documento prueba',
-                'created_at' => '2024-05-17 10:51:20',
-                'updated_at' => '2024-05-17 10:51:20',
-            ),
         ));
         
         

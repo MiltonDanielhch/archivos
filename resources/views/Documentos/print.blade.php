@@ -8,6 +8,9 @@
         <!-- Favicon -->
             <link rel="shortcut icon" href="{{ asset('images/icon.png') }}" type="image/png">
         <style>
+            p{
+                text-align: justify;
+            }
             body{
                 margin: 0px auto;
                 font-family: Arial, sans-serif;
@@ -95,9 +98,13 @@
                     margin-bottom: 0px;
                 }
             }
+            .text-justify {
+        text-align: justify !important;
+    }
         </style>
     </head>
     <body>
+        @if($doc->Idtipo == 5)
         <div id="watermark">
             <img src="{{ asset('images/LogoGobe.jpg') }}" /> 
         </div>
@@ -115,12 +122,37 @@
                             <button type="button" class="btn btn-save" style="display: none">Guardar</button>
                       
                 </div>
-                <b><center>{!!$doc->tipoDocumento->nomdoc !!} &nbsp; {{ $doc->NrDocumento }}</center></b>
+                <b><center>{!!$doc->tipoDocumento->nomdoc !!}<br> &nbsp; {{ $doc->NrDocumento }}</center></b>
                 <p>
-                    {!!$doc->Cuerpo !!}
-            </p>
+                    {!! $doc->Cuerpo !!}
+                </p>
             </div>
         </div>
+        @else
+        <div id="watermark">
+            <img src="{{ asset('images/LogoGobe.jpg') }}" /> 
+        </div>
+        <div class="container">
+            <div class="sheet">
+                <table width="100%">
+                    <tr>
+                        <td width="100px"><img id="logo" src="{{ asset('images/LogoGobe.jpg') }}" /></td>
+                        <td></td>
+                        <td width="100px" style="text-align: right">{!! $qr !!}</td>
+                    </tr>
+                </table>
+                <div class="options" style="position: fixed; bottom: 10px; right: 20px">
+                            <button type="button" class="btn btn-print" onclick="window.print()">Imprimir</button>
+                            <button type="button" class="btn btn-save" style="display: none">Guardar</button>
+                      
+                </div>
+                <b><center>{!!$doc->tipoDocumento->nomdoc !!} &nbsp; {{ $doc->NrDocumento }}<br>Dr. José Alejandro Unzueta Shiriqui<br>GOBERNADOR DEL DEPARTAMENTO AUTÓNOMO DEL BENI</center></b>
+                <p>
+                    {!! $doc->Cuerpo !!}
+                </p>
+            </div>
+        </div>
+        @endif
         @yield('css')
 
         <script>

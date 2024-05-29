@@ -36,7 +36,7 @@ class PermissionRoleTableSeeder extends Seeder
                                                 `key` = 'browse_tipos' or
                                                 `key` = 'read_tipos' or
                                                 `key` = 'edit_tipos' or
-                                                `key` = 'add_tipos' or")->get();
+                                                `key` = 'add_tipos'")->get();
         $role->permissions()->sync($permissions->pluck('id')->all());
     }
 }

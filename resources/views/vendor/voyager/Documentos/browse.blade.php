@@ -39,7 +39,7 @@
                 @include('voyager::multilingual.language-selector')
             </div>
         </div>
-    </div>
+    </div>   
 @stop
 
 @section('content')

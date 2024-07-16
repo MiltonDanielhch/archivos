@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\documentController;
+// use App\Http\Controllers\documentController;
+use App\Http\Controllers\voyager\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,11 @@ Route::get('maintenance', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'desarrollo.creativo'], function () {
     Voyager::routes();
-    Route::get('Imprimir/{id}', [documentController::class,"printdoc"])->name('document.print');
+    Route::get('/documents_list', [DocumentController::class, "list"])->name('documents.list');
+    Route::post('/documents_delete', [DocumentController::class, "delete"])->name('documents.delete');
+    Route::get('/documents_qr/{id}',[DocumentController::class, "showQrCode"])->name('documents.showQrCode')->middleware('auth'); 
 });
-
+Route::get('/validate_documents/{id}', [DocumentController::class, "showDetails"])->name('documents.showdetails');
 // Clear cache
 Route::get('/admin/clear-cache', function() {
     Artisan::call('optimize:clear');

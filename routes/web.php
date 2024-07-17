@@ -29,9 +29,11 @@ Route::get('maintenance', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'desarrollo.creativo'], function () {
     Voyager::routes();
-    Route::get('/documents_list', [DocumentController::class, "list"])->name('documents.list');
-    Route::post('/documents_delete', [DocumentController::class, "delete"])->name('documents.delete');
+    Route::get('/documents_list', [DocumentController::class, "list"])->name('documents.list')->middleware('auth');
+    Route::post('/documents_delete', [DocumentController::class, "delete"])->name('documents.delete')->middleware('auth');
     Route::get('/documents_qr/{id}',[DocumentController::class, "showQrCode"])->name('documents.showQrCode')->middleware('auth'); 
+    Route::get('/documents/uploadpdf/{id}',[DocumentController::class, "uploadpdf"])->name('documents.uploadPdf')->middleware('auth');
+    Route::post('/documents/uploadpdf/{id}',[DocumentController::class, "uploadpdfstore"])->name('documents.uploadPdfstore')->middleware('auth');
 });
 Route::get('/validate_documents/{id}', [DocumentController::class, "showDetails"])->name('documents.showdetails');
 // Clear cache

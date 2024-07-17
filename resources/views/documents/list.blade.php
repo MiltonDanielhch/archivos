@@ -32,7 +32,7 @@
                                 <label class="label label-warning">Pendiente</label>
                             @endif
                             @if ($item->Status == 'confirmado')
-                                <label class="label label-info">Confirmando</label>
+                                <label class="label label-info">Confirmado</label>
                             @endif
                             @if ($item->Status == 'anulado')
                                 <label class="label label-danger">Anulado</label>
@@ -71,13 +71,21 @@
                                 @if ($item->Status == 'pendiente')
                                     {{-- {{ route('documents.showQrCode',$data->getKey())}} --}}
                                     <a href="{{ route('documents.showQrCode',$item->id)}} " class="btn btn-sm btn-warning" target="_blank">
-                                        <i class="fa fa-qrcode" style=""></i> Qr
+                                        <i class="fa fa-qrcode" style=""></i> <span class="hidden-xs hidden-sm">Qr</span>
+                                    </a>
+                                    <a href="{{ route('documents.uploadPdf',$item->id) }}" class="btn btn-sm btn-success">
+                                        <i class="fa fa-upload"></i><span class="hidden-xs hidden-sm"> PDF</span>
                                     </a>
                                     @if(auth()->user()->hasPermission('delete_documents'))
                                     <a data-toggle="modal" data-id="{{$item->id}}" data-target="#myModalEliminar" title="Eliminar" class="btn btn-sm btn-danger view">
                                         <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Eliminar</span>
                                     </a>
                                     @endif
+                                @endif
+                                @if($item->Status == 'confirmado')
+                                    <a href="{{ route('documents.showdetails',$item->id) }}" class="btn btn-sm btn-warning">
+                                        <i class="fa fa-eye"></i> <span class="hidden-xs hidden-sm">Ver</span>
+                                    </a>
                                 @endif
                             </div>
                         </td>                        

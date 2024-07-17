@@ -101,4 +101,24 @@ class DocumentController extends VoyagerBaseController
         $qr = QrCode::size(300)->generate(route('documents.showdetails', $document->id));
         return view('documents.qr', ['document' => $document, 'qr' => $qr]);
     }
+    public function uploadpdf($id){
+        $document = Document::findOrFail($id);
+        return view('documents.uploadpdf', compact('document'));
+    }
+    public function uploadpdfstore(Request $request){
+        $document = Document::findOrFail($request->id);
+        $document->PDFFile = $request->file('pdf')->store('documents');
+        $document->Status = 'confirmado';
+        $document->save();
+        return redirect()->route('voyager.documents.index');
+    }
+
+    public function showPDF($documentId)
+    {
+        $document = Document::findOrFail($documentId);
+        $pathToFile = storage_path('app/public/' . $document->PDFFile);
+        $fileName = $document->documentType->name.'_'.$document->DocumentNumber.'.pdf'; // El nombre que quieres que tenga el archivo
+
+        return response()->file($pathToFile, ['Content-Disposition' => 'inline; filename="' . $fileName . '"']);
+    }
 }

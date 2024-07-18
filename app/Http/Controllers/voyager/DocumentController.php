@@ -82,13 +82,15 @@ class DocumentController extends VoyagerBaseController
     {       
        
         $document = Document::findOrFail($id);
+        $documentNumber = str_replace("/", "-", $document->DocumentNumber);
+        $documentName = $document->documentType->name . '-' . $documentNumber;
 
         // if (!$associate->active) {
         //     $error = 'El asociado no se encuentra activo';
         //     return view('associates.show', ['associate' => $associate, 'error' => $error]);
         // }
 
-        return view('documents.showdetails', compact('document'));
+        return view('documents.showdetails', compact('document','documentName'));
     }
     public function showQrCode($id)
     {
@@ -113,12 +115,10 @@ class DocumentController extends VoyagerBaseController
         return redirect()->route('voyager.documents.index');
     }
 
-    public function showPDF($documentId)
+    public function showPDF($id,$name)
     {
-        $document = Document::findOrFail($documentId);
-        $pathToFile = storage_path('app/public/' . $document->PDFFile);
-        $fileName = $document->documentType->name.'_'.$document->DocumentNumber.'.pdf'; // El nombre que quieres que tenga el archivo
-
-        return response()->file($pathToFile, ['Content-Disposition' => 'inline; filename="' . $fileName . '"']);
+        $document = Document::findOrFail($id);
+        $path = storage_path('app/public/' . $document->PDFFile);
+        return response()->file($path);
     }
 }

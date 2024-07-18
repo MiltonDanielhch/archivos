@@ -28,23 +28,23 @@ class PermissionRoleTableSeeder extends Seeder
                                                 `key` = 'read_users' or
                                                 `key` = 'edit_users' or
                                                 `key` = 'add_users' or
-                                                table_name = 'documentos' or
-                                                `key` = 'browse_tipos' or
-                                                `key` = 'read_tipos' or
-                                                `key` = 'edit_tipos' or
-                                                `key` = 'add_tipos'")->get();
+                                                table_name = 'documents' or
+                                                `key` = 'browse_document_types' or
+                                                `key` = 'read_document_types' or
+                                                `key` = 'edit_document_types' or
+                                                `key` = 'add_document_types'")->get();
         $role->permissions()->sync($permissions->pluck('id')->all());
 
         $role = Role::where('name', 'user')->firstOrFail();
         $permissions = Permission::whereRaw("   `key` = 'browse_admin' or
-                                                `key` = 'browse_documentos' or
-                                                `key` = 'read_documentos' or
-                                                `key` = 'edit_documentos' or
-                                                `key` = 'add_documentos' or
-                                                `key` = 'browse_tipos' or
-                                                `key` = 'read_tipos' or
-                                                `key` = 'edit_tipos' or
-                                                `key` = 'add_tipos'")->get();
+                                                `key` = 'browse_documents' or
+                                                `key` = 'read_documents' or
+                                                `key` = 'edit_documents' or
+                                                `key` = 'add_documents' or
+                                                `key` = 'browse_document_types' or
+                                                `key` = 'read_document_types' or
+                                                `key` = 'edit_document_types' or
+                                                `key` = 'add_document_types'")->get();
         $role->permissions()->sync($permissions->pluck('id')->all());
     }
 }

@@ -32,7 +32,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('users');
         Permission::generateFor('settings');
         Permission::generateFor('permissions');
-        permission::generateFor('documentos');
-        Permission::generateFor('tipos');
+        permission::generateFor('documents');
+        Permission::generateFor('document_types');
     }
 }

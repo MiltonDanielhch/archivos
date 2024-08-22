@@ -10,7 +10,7 @@
                     <th style="text-align: center">Estado</th>
 
                     <th style="text-align: center">Gestión</th>
-                    
+
                     {{-- @if(auth()->user()->hasPermission('read_egres')||auth()->user()->hasPermission('edit_egres')||auth()->user()->hasPermission('delete_egres')) --}}
                     <th style="width: 150px;text-align: center;">Acciones</th>
                     {{-- @endif --}}
@@ -47,14 +47,14 @@
                                 @if ( $gestion && $item->status == 'pendiente')
                                     <a data-toggle="modal" data-id="{{$item->id}}" data-target="#myModalEnviar" title="Imprimir solicitud" class="btn btn-sm btn-success view">
                                         <i class="fa-solid fa-right-to-bracket"></i> Enviar
-                                    </a>   
+                                    </a>
                                 @endif
 
 
                                 @if( $item->status != 'pendiente' && auth()->user()->hasPermission('print_outbox'))
                                     <a href="{{route('nonstock.show',$item->id)}}" title="Imprimir solicitud" target="_blank" class="btn btn-sm btn-dark view">
                                         <i class="glyphicon glyphicon-print"></i>
-                                    </a>   
+                                    </a>
                                 @endif
                                 @if($gestion && $item->status == 'pendiente' || $gestion && $item->status == 'enviado')
                                     @if($item->gestion == $gestion->gestion)
@@ -65,7 +65,7 @@
                                         @endif
                                     @endif
                                 @endif
-                                
+
                             </div> --}}
                             <div>
                                 @if ($item->Status == 'pendiente')
@@ -88,7 +88,7 @@
                                     </a>
                                 @endif
                             </div>
-                        </td>                        
+                        </td>
                     </tr>
                 @empty
                     <tr>
@@ -99,7 +99,7 @@
                             </h5>
                         </td>
                     </tr>
-                @endforelse                                               
+                @endforelse
             </tbody>
         </table>
     </div>
